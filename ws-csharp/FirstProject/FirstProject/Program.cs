@@ -1,26 +1,37 @@
 ﻿using FirstProject.Model;
+using FirstProject.Exceptions;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    static void Main(string[] args)
     {
 
-        var nome = "fiap";
+        //var nome = "fiap";
 
-        int valor = 10;
+        //int valor = 10;
 
-        List<int> lista = new List<int>();
+        //List<int> lista = new List<int>();
 
-        for (int i = 0; i < valor; i++)
+        //for (int i = 0; i < valor; i++)
+        //{
+        //    lista.Add(i);
+        //}
+
+        //lista.ForEach(x => Console.WriteLine(x));
+
+        //foreach (var vlr in lista)
+        //{
+        //    Console.WriteLine(vlr);
+        //}
+        try
         {
-            lista.Add(i);
+            throw new PersonalizadaException("Erro personalizado");
+        }
+        catch (PersonalizadaException e)
+        {
+            Console.WriteLine(e.Message);
         }
 
-        lista.ForEach(x => Console.WriteLine(x));
-
-        foreach (var vlr in lista)
-        {
-            Console.WriteLine(vlr);
-        }
+        Console.Read();
     }
 }
